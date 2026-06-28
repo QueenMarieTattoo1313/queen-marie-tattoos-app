@@ -1,0 +1,515 @@
+```css
+/* ===========================================
+   QUEEN MARIE TATTOOS
+   Luxury Pink • Rose Gold • Glitter Theme
+=========================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+/* ---------- COLOR VARIABLES ---------- */
+
+:root{
+
+    --pink:#FCE8EF;
+    --lightPink:#FFF5F8;
+    --roseGold:#B76E79;
+    --roseGoldDark:#9C5C65;
+    --glitter:#D4AF37;
+    --white:#FFFFFF;
+    --text:#333333;
+    --shadow:rgba(0,0,0,.15);
+
+}
+
+/* ---------- RESET ---------- */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:linear-gradient(180deg,#FFF8FA,#FCE8EF,#FFF7F9);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+}
+
+
+/* ---------- HEADER ---------- */
+
+header{
+
+padding:40px 20px;
+
+text-align:center;
+
+background:white;
+
+box-shadow:0 4px 20px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+width:180px;
+
+max-width:90%;
+
+margin-bottom:20px;
+
+}
+
+header h1{
+
+font-family:'Playfair Display',serif;
+
+font-size:2.8rem;
+
+letter-spacing:5px;
+
+color:var(--roseGold);
+
+margin-bottom:10px;
+
+}
+
+header p{
+
+font-size:1.1rem;
+
+letter-spacing:6px;
+
+color:#777;
+
+}
+
+
+/* ---------- HERO ---------- */
+
+.hero{
+
+padding:30px;
+
+}
+
+.slideshow-container{
+
+width:100%;
+
+max-width:900px;
+
+margin:auto;
+
+overflow:hidden;
+
+border-radius:25px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.slideshow-container img{
+
+width:100%;
+
+display:block;
+
+}
+
+
+/* ---------- MAIN BUTTONS ---------- */
+
+.main-buttons{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+padding:40px;
+
+}
+
+.main-btn{
+
+background:linear-gradient(135deg,#B76E79,#D4AF37);
+
+color:white;
+
+padding:18px;
+
+border-radius:18px;
+
+text-decoration:none;
+
+font-weight:600;
+
+font-size:18px;
+
+text-align:center;
+
+transition:.3s;
+
+box-shadow:0 8px 18px rgba(183,110,121,.35);
+
+}
+
+.main-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 12px 25px rgba(212,175,55,.45);
+
+}
+
+
+/* ---------- FEATURED ---------- */
+
+.featured{
+
+padding:50px 20px;
+
+text-align:center;
+
+}
+
+.featured h2{
+
+font-family:'Playfair Display',serif;
+
+color:var(--roseGold);
+
+font-size:2rem;
+
+margin-bottom:25px;
+
+letter-spacing:3px;
+
+}
+
+.gallery-preview{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:18px;
+
+}
+
+.gallery-preview img{
+
+width:100%;
+
+border-radius:18px;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 8px 18px rgba(0,0,0,.15);
+
+}
+
+.gallery-preview img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+/* ---------- SOCIAL ---------- */
+
+.social{
+
+padding:40px;
+
+text-align:center;
+
+}
+
+.social h2{
+
+margin-bottom:25px;
+
+color:var(--roseGold);
+
+letter-spacing:3px;
+
+}
+
+.social-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.social-btn{
+
+background:var(--roseGold);
+
+color:white;
+
+padding:15px 28px;
+
+border-radius:40px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.social-btn:hover{
+
+background:var(--glitter);
+
+color:black;
+
+}
+
+
+/* ---------- CONTACT ---------- */
+
+.contact-home{
+
+padding:40px;
+
+text-align:center;
+
+}
+
+.contact-home h2{
+
+color:var(--roseGold);
+
+margin-bottom:20px;
+
+}
+
+.contact-home p{
+
+margin:10px;
+
+font-size:18px;
+
+}
+
+.contact-home a{
+
+text-decoration:none;
+
+color:var(--text);
+
+font-weight:bold;
+
+}
+
+
+/* ---------- SHARE BUTTON ---------- */
+
+.share{
+
+padding:40px;
+
+text-align:center;
+
+}
+
+.share-btn{
+
+background:linear-gradient(135deg,#D4AF37,#B76E79);
+
+color:white;
+
+border:none;
+
+padding:18px 40px;
+
+border-radius:40px;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 8px 18px rgba(0,0,0,.2);
+
+}
+
+.share-btn:hover{
+
+transform:scale(1.05);
+
+}
+
+
+/* ---------- BOTTOM NAV ---------- */
+
+.bottom-nav{
+
+position:fixed;
+
+bottom:0;
+
+left:0;
+
+width:100%;
+
+background:white;
+
+display:flex;
+
+justify-content:space-around;
+
+padding:12px;
+
+box-shadow:0 -5px 15px rgba(0,0,0,.1);
+
+z-index:999;
+
+}
+
+.bottom-nav a{
+
+text-decoration:none;
+
+color:var(--roseGold);
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+.bottom-nav a:hover{
+
+color:var(--glitter);
+
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer{
+
+margin-top:70px;
+
+padding:40px;
+
+text-align:center;
+
+background:white;
+
+color:#666;
+
+font-size:15px;
+
+}
+
+
+/* ---------- BACK BUTTON ---------- */
+
+.back-button{
+
+display:inline-block;
+
+margin:20px;
+
+background:var(--roseGold);
+
+color:white;
+
+padding:12px 25px;
+
+border-radius:30px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.back-button:hover{
+
+background:var(--glitter);
+
+color:black;
+
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:2rem;
+
+letter-spacing:3px;
+
+}
+
+header p{
+
+font-size:15px;
+
+letter-spacing:3px;
+
+}
+
+.main-buttons{
+
+padding:20px;
+
+}
+
+.main-btn{
+
+font-size:16px;
+
+}
+
+.gallery-preview{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+```
