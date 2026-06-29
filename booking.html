@@ -1,159 +1,927 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Book Appointment | Queen Marie Tattoos</title>
+<meta charset="UTF-8">
 
-    <meta name="description" content="Book your tattoo appointment with Queen Marie Tattoos.">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../styles.css">
+<title>
 
-    <link rel="icon" href="../images/logo.png">
+Book Appointment
+
+</title>
+
+<meta name="theme-color"
+content="#ff4fa5">
+
+<link rel="icon"
+href="images/logo.png">
+
+<link rel="stylesheet"
+href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
 </head>
 
 <body>
 
-<header>
+<div class="background-glow"></div>
 
-    <div class="logo-container">
+<div class="sparkles"></div>
 
-        <img src="../images/logo.png"
-             alt="Queen Marie Tattoos Logo"
-             class="logo">
+<div class="app-container">
 
-        <h1>Book Appointment</h1>
+<header class="page-header">
 
-        <p>Luxury • Precision • Art</p>
+<a href="javascript:history.back()"
+class="back-btn">
 
-    </div>
+<i class="fa-solid fa-arrow-left"></i>
 
-</header>
+Back
 
-<section class="welcome">
+</a>
 
-    <h2>Book Your Tattoo</h2>
+<div class="page-title">
 
-    <p>
-        Complete the form below to request your appointment.
-        Once submitted, Queen Marie will contact you to confirm
-        your date and time.
-    </p>
+<img
+src="images/logo.png"
+class="logo"
+alt="Queen Marie">
 
-</section>
+<div>
 
-<form id="bookingForm" onsubmit="return validateBookingForm()">
+<h1>
 
-    <input
-        type="text"
-        id="clientName"
-        placeholder="Full Name"
-        required>
+Book Appointment
 
-    <input
-        type="tel"
-        id="phone"
-        placeholder="Phone Number"
-        required>
+</h1>
 
-    <input
-        type="email"
-        id="email"
-        placeholder="Email Address"
-        required>
+<p>
 
-    <input
-        type="date"
-        id="appointmentDate"
-        required>
+Queen Marie Tattoos
 
-    <select id="size" required>
-
-        <option value="">Tattoo Size</option>
-
-        <option>Small</option>
-
-        <option>Medium</option>
-
-        <option>Large</option>
-
-        <option>Sleeve</option>
-
-    </select>
-
-    <textarea
-        id="tattoo"
-        placeholder="Describe the tattoo you want..."
-        required></textarea>
-
-    <button type="submit">
-
-        📅 Request Appointment
-
-    </button>
-
-</form>
-
-<section class="main-buttons">
-
-    <a href="https://web.getporter.io/artist/queen-marie"
-       target="_blank"
-       class="main-btn">
-
-        💳 Pay Deposit
-
-    </a>
-
-</section>
-
-<section class="contact-home">
-
-    <h2>Questions?</h2>
-
-    <p>
-
-        📞
-        <a href="tel:2147109249">
-            214-710-9249
-        </a>
-
-    </p>
-
-    <p>
-
-        📧
-        <a href="mailto:donnamorales70@gmail.com">
-            donnamorales70@gmail.com
-        </a>
-
-    </p>
-
-</section>
-
-<div style="text-align:center; margin:40px;">
-
-    <a href="../index.html" class="back-button">
-
-        ← Back Home
-
-    </a>
+</p>
 
 </div>
 
-<footer>
+</div>
 
-    <p>
-        © <span id="year"></span> Queen Marie Tattoos
-    </p>
+</header>
 
-    <p>
-        Luxury Custom Tattoos
-    </p>
+<section class="gallery-hero">
+
+<h2>
+
+Let's Create Something Beautiful
+
+</h2>
+
+<p>
+
+Complete the booking form below.
+
+Once submitted, Queen Marie will contact you to confirm your appointment.
+
+</p>
+
+</section>
+
+<!--==================================
+BOOKING FORM
+===================================-->
+
+<section class="glass-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</div>
+
+<h2>
+
+Appointment Request
+
+</h2>
+
+<p>
+
+Complete the information below and Queen Marie will contact you to confirm your appointment.
+
+</p>
+
+<form
+id="bookingForm"
+onsubmit="return validateBookingForm()"
+class="booking-form">
+
+<div class="form-group">
+
+<label>
+
+Full Name
+
+</label>
+
+<input
+type="text"
+id="clientName"
+placeholder="Enter your full name"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Phone Number
+
+</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="(555) 555-5555"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Email Address
+
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="name@email.com"
+required>
+
+</div>
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>
+
+Preferred Date
+
+</label>
+
+<input
+type="date"
+id="appointmentDate"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Preferred Time
+
+</label>
+
+<input
+type="time"
+id="appointmentTime"
+required>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Placement On Body
+
+</label>
+
+<input
+type="text"
+id="placement"
+placeholder="Arm, Leg, Chest, Back..."
+required>
+
+</div>
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>
+
+Tattoo Size
+
+</label>
+
+<select
+id="size"
+required>
+
+<option value="">
+
+Select Size
+
+</option>
+
+<option>
+
+Extra Small
+
+</option>
+
+<option>
+
+Small
+
+</option>
+
+<option>
+
+Medium
+
+</option>
+
+<option>
+
+Large
+
+</option>
+
+<option>
+
+Half Sleeve
+
+</option>
+
+<option>
+
+Full Sleeve
+
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Tattoo Style
+
+</label>
+
+<select
+id="style"
+required>
+
+<option value="">
+
+Select Style
+
+</option>
+
+<option>
+
+Black & Grey
+
+</option>
+
+<option>
+
+Color
+
+</option>
+
+<option>
+
+Fine Line
+
+</option>
+
+<option>
+
+Lettering
+
+</option>
+
+<option>
+
+Memorial
+
+</option>
+
+<option>
+
+Custom Design
+
+</option>
+
+</select>
+
+</div>
+
+</div>   
+
+<!--==================================
+TATTOO DETAILS
+===================================-->
+
+<div class="form-group">
+
+<label>
+
+Tattoo Description
+
+</label>
+
+<textarea
+id="tattoo"
+rows="6"
+placeholder="Describe your tattoo idea, include any details, colors, lettering, or inspiration..."
+required>
+
+</textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Reference Photo (Optional)
+
+</label>
+
+<input
+type="file"
+id="referencePhoto"
+accept="image/*">
+
+<p class="form-note">
+
+Upload a picture of the tattoo you'd like or your inspiration.
+
+</p>
+
+</div>
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>
+
+Estimated Budget
+
+</label>
+
+<select
+id="budget">
+
+<option value="">
+
+Select Budget
+
+</option>
+
+<option>
+
+Under $100
+
+</option>
+
+<option>
+
+$100 - $250
+
+</option>
+
+<option>
+
+$250 - $500
+
+</option>
+
+<option>
+
+$500 - $1,000
+
+</option>
+
+<option>
+
+$1,000+
+
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Preferred Contact
+
+</label>
+
+<select
+id="contactMethod"
+required>
+
+<option value="">
+
+Choose One
+
+</option>
+
+<option>
+
+Phone Call
+
+</option>
+
+<option>
+
+Text Message
+
+</option>
+
+<option>
+
+Email
+
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="glass-card deposit-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-credit-card"></i>
+
+</div>
+
+<h3>
+
+Appointment Deposit
+
+</h3>
+
+<p>
+
+A deposit is required to reserve your appointment date.
+Deposits are applied toward the final cost of your tattoo.
+
+</p>
+
+<a
+href="https://web.getporter.io/artist/queen-marie"
+target="_blank"
+class="primary-btn">
+
+<i class="fa-solid fa-credit-card"></i>
+
+Pay Deposit
+
+</a>
+
+</div>
+
+
+<div class="checkbox-group">
+
+<label>
+
+<input
+type="checkbox"
+required>
+
+I understand that I must be at least 18 years old (or meet local legal requirements) and that submitting this request does not guarantee an appointment until it is confirmed.
+
+</label>
+
+</div>
+
+
+<button
+type="submit"
+class="primary-btn booking-submit">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Request Appointment
+
+</button>
+
+</form>
+
+</section>
+
+<!--==================================
+WHY BOOK WITH QUEEN MARIE
+===================================-->
+
+<section class="glass-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-crown"></i>
+
+</div>
+
+<h2>
+
+Why Book With Queen Marie?
+
+</h2>
+
+<div class="feature-grid">
+
+<div class="feature-box">
+
+<i class="fa-solid fa-pen-ruler"></i>
+
+<h3>
+
+Custom Designs
+
+</h3>
+
+<p>
+
+Every tattoo is designed specifically for you.
+
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<i class="fa-solid fa-award"></i>
+
+<h3>
+
+Professional Quality
+
+</h3>
+
+<p>
+
+High-quality artwork with attention to every detail.
+
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<i class="fa-solid fa-heart"></i>
+
+<h3>
+
+Client Focused
+
+</h3>
+
+<p>
+
+Comfortable experience from consultation to aftercare.
+
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<i class="fa-solid fa-shield-heart"></i>
+
+<h3>
+
+Safe Environment
+
+</h3>
+
+<p>
+
+Professional sanitation and safety practices.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!--==================================
+CONTACT QUEEN MARIE
+===================================-->
+
+<section class="glass-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-headset"></i>
+
+</div>
+
+<h2>
+
+Need Help Before Booking?
+
+</h2>
+
+<p>
+
+Questions about pricing, tattoo ideas, scheduling, or availability?
+
+Reach out anytime.
+
+</p>
+
+<div class="contact-buttons">
+
+<a
+href="tel:2147109249"
+class="primary-btn">
+
+<i class="fa-solid fa-phone"></i>
+
+Call Now
+
+</a>
+
+<a
+href="sms:2147109249"
+class="secondary-btn">
+
+<i class="fa-solid fa-comment-dots"></i>
+
+Text Artist
+
+</a>
+
+</div>
+
+<div class="contact-buttons">
+
+<a
+href="mailto:donnamorales70@gmail.com"
+class="primary-btn">
+
+<i class="fa-solid fa-envelope"></i>
+
+Email
+
+</a>
+
+<a
+href="https://web.getporter.io/artist/queen-marie"
+target="_blank"
+class="secondary-btn">
+
+<i class="fa-solid fa-credit-card"></i>
+
+Pay Deposit
+
+</a>
+
+</div>
+
+</section>
+
+
+<!--==================================
+SERVICE AREA
+===================================-->
+
+<section class="glass-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-location-dot"></i>
+
+</div>
+
+<h2>
+
+Service Area
+
+</h2>
+
+<p>
+
+Proudly serving clients throughout:
+
+</p>
+
+<ul class="aftercare-list">
+
+<li>Tyler, Texas</li>
+
+<li>Bullard, Texas</li>
+
+<li>East Texas</li>
+
+<li>Surrounding Communities</li>
+
+</ul>
+
+</section>    
+
+<!--==================================
+FLOATING ACTION BUTTONS
+===================================-->
+
+<div class="floating-buttons">
+
+<a
+href="tel:2147109249"
+class="floating-btn"
+title="Call">
+
+<i class="fa-solid fa-phone"></i>
+
+</a>
+
+<a
+href="booking.html"
+class="floating-btn"
+title="Book">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</a>
+
+<a
+href="sms:2147109249"
+class="floating-btn"
+title="Text">
+
+<i class="fa-solid fa-comment-dots"></i>
+
+</a>
+
+</div>
+
+
+<!--==================================
+BOTTOM NAVIGATION
+===================================-->
+
+<nav class="bottom-nav">
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</a>
+
+<a href="gallery.html">
+
+<i class="fa-solid fa-images"></i>
+
+<span>Gallery</span>
+
+</a>
+
+<a href="booking.html" class="active">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<span>Book</span>
+
+</a>
+
+<a href="reviews.html">
+
+<i class="fa-solid fa-star"></i>
+
+<span>Reviews</span>
+
+</a>
+
+<a href="contact.html">
+
+<i class="fa-solid fa-bars"></i>
+
+<span>More</span>
+
+</a>
+
+</nav>
+
+
+<!--==================================
+FOOTER
+===================================-->
+
+<footer class="footer">
+
+<img
+src="images/logo.png"
+class="footer-logo"
+alt="Queen Marie Tattoos">
+
+<h3>
+
+Queen Marie Tattoos
+
+</h3>
+
+<p>
+
+Luxury Custom Tattoos
+
+</p>
+
+<p>
+
+Tyler • Bullard • East Texas
+
+</p>
+
+<p>
+
+© <span id="year"></span>
+
+Queen Marie Tattoos
+
+</p>
 
 </footer>
 
-<script src="../script.js"></script>
+
+<!--==================================
+NOTIFICATION
+===================================-->
+
+<div
+id="notification"
+class="notification">
+
+</div>
+
+
+<!--==================================
+LOADER
+===================================-->
+
+<div id="loader">
+
+<div class="loader-spinner"></div>
+
+</div>
+
+
+<!--==================================
+SCRIPTS
+===================================-->
+
+<script src="script.js"></script>
+
+</div>
 
 </body>
-</html>
+
+</html>    
