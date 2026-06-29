@@ -1603,6 +1603,602 @@ font-size:12px;
 }
 
 }
+
+/*==================================
+LUXURY SPACING
+==================================*/
+
+.page-header{
+
+padding:30px 25px;
+
+}
+
+.page-title h1{
+
+font-size:36px;
+
+margin-bottom:12px;
+
+line-height:1.3;
+
+}
+
+.page-title p{
+
+font-size:16px;
+
+letter-spacing:2px;
+
+margin-top:8px;
+
+color:#d8d8d8;
+
+}
+
+.card-icon{
+
+margin-bottom:25px;
+
+font-size:48px;
+
+}
+
+.glass-card h2{
+
+font-size:30px;
+
+margin-bottom:20px;
+
+line-height:1.4;
+
+}
+
+.glass-card h3{
+
+font-size:22px;
+
+margin-bottom:15px;
+
+line-height:1.5;
+
+}
+
+.glass-card p{
+
+font-size:17px;
+
+line-height:2;
+
+margin:18px 0 25px;
+
+}
+
+.aftercare-list{
+
+margin-top:25px;
+
+padding-left:25px;
+
+}
+
+.aftercare-list li{
+
+margin-bottom:18px;
+
+line-height:1.9;
+
+font-size:17px;
+
+}
+
+.feature-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+margin-top:35px;
+
+}
+
+.feature-box{
+
+padding:25px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.05);
+
+text-align:center;
+
+}
+
+.feature-box i{
+
+font-size:40px;
+
+margin-bottom:18px;
+
+color:var(--pink);
+
+}
+
+.feature-box h3{
+
+margin-bottom:12px;
+
+}
+
+.contact-buttons{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:20px;
+
+margin-top:30px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:20px;
+
+margin-top:35px;
+
+}
+
+.hero-buttons a{
+
+flex:1;
+
+min-width:180px;
+
+max-width:260px;
+
+text-align:center;
+
+}
+
+.divider{
+
+margin:35px 0;
+
+border:none;
+
+height:1px;
+
+background:rgba(255,255,255,.15);
+
+}
+
+.form-note{
+
+font-size:14px;
+
+color:#bbbbbb;
+
+margin-top:10px;
+
+line-height:1.7;
+
+}
+
+/*==================================
+PREMIUM PAGE SPACING
+==================================*/
+
+.hero-section,
+.gallery-hero{
+
+margin:45px 20px 60px;
+
+padding:45px 35px;
+
+}
+
+.hero-image{
+
+margin:45px auto;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.hero-image img{
+
+width:100%;
+
+max-width:390px;
+
+border-radius:30px;
+
+object-fit:cover;
+
+}
+
+
+/*==================================
+FORM SPACING
+==================================*/
+
+.review-form,
+.booking-form,
+.contact-form,
+.referral-form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:28px;
+
+margin-top:30px;
+
+}
+
+.form-group{
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.form-group label{
+
+font-size:16px;
+
+font-weight:600;
+
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+padding:18px 20px;
+
+font-size:16px;
+
+border-radius:18px;
+
+}
+
+
+/*==================================
+BUTTONS
+==================================*/
+
+.primary-btn,
+.secondary-btn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+height:60px;
+
+font-size:17px;
+
+font-weight:600;
+
+border-radius:50px;
+
+}
+
+.primary-btn i,
+.secondary-btn i{
+
+font-size:18px;
+
+}
+
+
+/*==================================
+GLASS CARDS
+==================================*/
+
+.glass-card{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.glass-card .card-icon{
+
+align-self:center;
+
+}
+
+
+/*==================================
+FOOTER
+==================================*/
+
+.footer{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:15px;
+
+padding-top:70px;
+
+}
+
+
+/*==================================
+MOBILE IMPROVEMENTS
+==================================*/
+
+@media(max-width:768px){
+
+.feature-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-buttons a{
+
+max-width:100%;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+width:100%;
+
+}
+
+.glass-card{
+
+padding:30px 25px;
+
+}
+
+.gallery-hero{
+
+padding:35px 25px;
+
+}
+
+}
+
+/*==================================
+FINAL LUXURY POLISH
+==================================*/
+
+/* More breathing room between sections */
+section{
+
+margin:70px auto;
+
+}
+
+/* Better spacing inside every card */
+.glass-card{
+
+padding:45px 35px;
+
+margin-bottom:60px;
+
+}
+
+/* Paragraph spacing */
+
+p{
+
+margin:20px 0;
+
+line-height:2;
+
+}
+
+/* Better heading spacing */
+
+h1{
+
+margin-bottom:18px;
+
+line-height:1.25;
+
+}
+
+h2{
+
+margin-bottom:20px;
+
+line-height:1.35;
+
+}
+
+h3{
+
+margin-bottom:15px;
+
+line-height:1.45;
+
+}
+
+/* Lists */
+
+.aftercare-list{
+
+margin-top:25px;
+
+padding-left:28px;
+
+}
+
+.aftercare-list li{
+
+margin-bottom:18px;
+
+line-height:1.9;
+
+}
+
+/* Icon spacing */
+
+.card-icon{
+
+margin-bottom:25px;
+
+}
+
+/* Card hover */
+
+.glass-card:hover{
+
+transform:translateY(-5px);
+
+transition:.35s ease;
+
+}
+
+/* Review, booking, contact & referral forms */
+
+.review-form,
+.booking-form,
+.contact-form,
+.referral-form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:30px;
+
+}
+
+/* Inputs */
+
+input,
+select,
+textarea{
+
+margin-top:8px;
+
+margin-bottom:5px;
+
+}
+
+/* Search box */
+
+.search-box{
+
+width:100%;
+
+padding:18px 22px;
+
+border-radius:50px;
+
+font-size:16px;
+
+margin-bottom:35px;
+
+}
+
+/* Footer */
+
+.footer{
+
+margin-top:90px;
+
+padding-bottom:140px;
+
+}
+
+/* Smooth animations */
+
+.glass-card,
+.dashboard-card,
+.primary-btn,
+.secondary-btn{
+
+transition:all .35s ease;
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.page-title{
+
+gap:15px;
+
+}
+
+.page-title h1{
+
+font-size:30px;
+
+}
+
+.gallery-hero h2{
+
+font-size:34px;
+
+}
+
+.glass-card{
+
+padding:30px 22px;
+
+}
+
+p{
+
+font-size:16px;
+
+}
+
+}
 /*==================================
 END OF STYLESHEET
 ==================================*/
