@@ -1222,7 +1222,387 @@ font-size:11px;
 
 }
 
+/*==================================
+NEW PAGE LAYOUT
+==================================*/
 
+.page-header{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:25px;
+
+margin-bottom:40px;
+
+}
+
+.page-title{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+.back-btn{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:12px 22px;
+
+border-radius:40px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+font-weight:600;
+
+}
+
+.back-btn:hover{
+
+background:var(--pink);
+
+}
+
+.gallery-hero{
+
+margin:30px 20px 50px;
+
+padding:45px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+text-align:center;
+
+}
+
+.gallery-hero h2{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+}
+
+.gallery-hero p{
+
+font-size:18px;
+
+line-height:2;
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+.glass-card{
+
+margin:45px 20px;
+
+padding:40px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+box-shadow:var(--shadow);
+
+}
+
+.glass-card h2{
+
+margin-bottom:20px;
+
+}
+
+.glass-card p{
+
+margin:20px 0;
+
+line-height:2;
+
+}
+
+.form-group{
+
+margin-bottom:28px;
+
+}
+
+.form-group label{
+
+display:block;
+
+margin-bottom:10px;
+
+font-weight:600;
+
+}
+
+.form-group input,
+
+.form-group textarea,
+
+.form-group select{
+
+width:100%;
+
+padding:18px;
+
+border-radius:18px;
+
+background:#1a1a1a;
+
+border:1px solid rgba(255,255,255,.12);
+
+color:white;
+
+font-size:16px;
+
+}
+
+.form-group textarea{
+
+min-height:170px;
+
+resize:vertical;
+
+}
+
+.review-form,
+
+.booking-form,
+
+.contact-form,
+
+.referral-form{
+
+margin-top:30px;
+
+}
+
+/*==================================
+HOME ICON GRID
+==================================*/
+
+.dashboard{
+
+padding:30px 20px 60px;
+
+}
+
+.dashboard-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:22px;
+
+margin-top:35px;
+
+}
+
+.dashboard-card{
+
+padding:22px 12px;
+
+min-height:125px;
+
+border-radius:24px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+transition:.35s;
+
+}
+
+.dashboard-card .card-icon{
+
+font-size:34px;
+
+margin-bottom:15px;
+
+}
+
+.dashboard-card h3{
+
+font-size:15px;
+
+line-height:1.4;
+
+margin-bottom:8px;
+
+}
+
+.dashboard-card p{
+
+display:none;
+
+}
+
+.dashboard-card:hover{
+
+transform:translateY(-8px) scale(1.03);
+
+}
+
+
+/*==================================
+HOME IMAGE
+==================================*/
+
+.hero-image{
+
+margin:40px auto;
+
+text-align:center;
+
+}
+
+.hero-image img{
+
+width:100%;
+
+max-width:380px;
+
+border-radius:30px;
+
+display:block;
+
+margin:auto;
+
+box-shadow:
+
+0 0 25px rgba(255,79,165,.45),
+
+0 0 60px rgba(183,110,121,.35);
+
+}
+
+
+/*==================================
+HOME BUTTONS
+==================================*/
+
+.hero-buttons{
+
+margin-top:35px;
+
+margin-bottom:45px;
+
+gap:20px;
+
+}
+
+.primary-btn,
+
+.secondary-btn{
+
+padding:18px 36px;
+
+font-size:17px;
+
+min-width:220px;
+
+}
+
+
+/*==================================
+BETTER SPACING
+==================================*/
+
+section{
+
+margin-bottom:60px;
+
+}
+
+h1{
+
+margin-bottom:20px;
+
+}
+
+h2{
+
+margin-bottom:18px;
+
+}
+
+p{
+
+margin:18px 0;
+
+line-height:1.9;
+
+}
+
+
+/*==================================
+PHONE
+==================================*/
+
+@media(max-width:768px){
+
+.dashboard-grid{
+
+grid-template-columns:repeat(4,1fr);
+
+gap:15px;
+
+}
+
+.dashboard-card{
+
+min-height:105px;
+
+padding:16px 8px;
+
+}
+
+.dashboard-card .card-icon{
+
+font-size:28px;
+
+}
+
+.dashboard-card h3{
+
+font-size:12px;
+
+}
+
+}
 /*==================================
 END OF STYLESHEET
 ==================================*/
