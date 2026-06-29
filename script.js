@@ -1,408 +1,565 @@
 "use strict";
 
+/*==================================
+QUEEN MARIE TATTOOS
+Luxury App
+==================================*/
+
 const APP_NAME = "Queen Marie Tattoos";
 
 const slides = [
-    "images/tattoo1.jpg",
-    "images/tattoo2.jpg",
-    "images/tattoo3.jpg",
-    "images/tattoo4.jpg"
+
+"images/IMG_1.PNG",
+"images/IMG_2.PNG",
+"images/IMG_3.PNG",
+"images/IMG_4.PNG",
+"images/IMG_5.PNG",
+"images/IMG_6.PNG",
+"images/IMG_7.PNG",
+"images/IMG_8.PNG",
+"images/IMG_9.PNG",
+"images/IMG_10.PNG",
+"images/IMG_11.PNG",
+"images/IMG_12.PNG",
+"images/IMG_13.PNG",
+"images/IMG_14.PNG",
+"images/IMG_15.PNG",
+"images/IMG_16.PNG",
+"images/IMG_17.PNG",
+"images/IMG_18.PNG",
+"images/IMG_19.PNG",
+"images/IMG_20.PNG",
+"images/IMG_21.PNG",
+"images/IMG_22.PNG",
+"images/IMG_23.PNG",
+"images/IMG_24.PNG",
+"images/IMG_25.PNG",
+"images/IMG_26.PNG",
+"images/IMG_27.PNG",
+"images/IMG_28.PNG",
+"images/IMG_29.PNG",
+"images/IMG_30.PNG",
+"images/IMG_31.PNG",
+"images/IMG_32.PNG"
+
 ];
 
-let currentSlide = 0;
+/*==================================
+SLIDESHOW
+==================================*/
+
+function startSlideshow(){
+
+const slide=document.getElementById("slideImage");
+
+if(!slide) return;
+
+slide.src=slides[currentSlide];
+
+setInterval(()=>{
+
+slide.style.opacity="0";
+
+setTimeout(()=>{
+
+currentSlide++;
+
+if(currentSlide>=slides.length){
+
+currentSlide=0;
+
+}
+
+slide.src=slides[currentSlide];
+
+slide.style.opacity="1";
+
+},400);
+
+},4000);
+
+}
+
+/*==================================
+YEAR
+==================================*/
+
+function updateYear(){
+
+const year=document.getElementById("year");
+
+if(year){
+
+year.textContent=new Date().getFullYear();
+
+}
+
+}
+let currentSlide = Math.floor(Math.random() * slides.length);
+
 let deferredPrompt = null;
 
-function startSlideshow() {
+/*==================================
+BACK BUTTON
+==================================*/
 
-    const slide = document.getElementById("slideImage");
+function goBack(){
 
-    if (!slide) return;
-
-    setInterval(() => {
-
-        currentSlide++;
-
-        if (currentSlide >= slides.length) {
-
-            currentSlide = 0;
-
-        }
-
-        slide.src = slides[currentSlide];
-
-    }, 4000);
+history.back();
 
 }
 
-function updateYear() {
+/*==================================
+SCROLL TO TOP
+==================================*/
 
-    const year = document.getElementById("year");
+function scrollToTop(){
 
-    if (year) {
+window.scrollTo({
 
-        year.textContent = new Date().getFullYear();
+top:0,
 
-    }
-
-}
-
-function goBack() {
-
-    history.back();
-
-}
-
-function scrollToTop() {
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-}
-
-window.addEventListener("beforeinstallprompt", (event) => {
-
-    event.preventDefault();
-
-    deferredPrompt = event;
-
-    const installButton = document.getElementById("installApp");
-
-    if (installButton) {
-
-        installButton.style.display = "inline-block";
-
-    }
+behavior:"smooth"
 
 });
 
-async function installApp() {
+}
 
-    if (!deferredPrompt) return;
+/*==================================
+INSTALL APP
+==================================*/
 
-    deferredPrompt.prompt();
+window.addEventListener("beforeinstallprompt",(event)=>{
 
-    await deferredPrompt.userChoice;
+event.preventDefault();
 
-    deferredPrompt = null;
+deferredPrompt=event;
+
+const installButton=document.getElementById("installApp");
+
+if(installButton){
+
+installButton.style.display="inline-flex";
 
 }
 
-async function shareWebsite() {
+});
 
-    const shareData = {
+async function installApp(){
 
-        title: APP_NAME,
+if(!deferredPrompt){
 
-        text: "Check out Queen Marie Tattoos!",
+showNotification("Install is not available right now.");
 
-        url: window.location.href
-
-    };
-
-    if (navigator.share) {
-
-        try {
-
-            await navigator.share(shareData);
-
-        } catch (error) {
-
-            console.log(error);
-
-        }
-
-    } else {
-
-        navigator.clipboard.writeText(window.location.href);
-
-        alert("Website link copied to clipboard!");
-
-    }
+return;
 
 }
 
-function openImage(imageSrc) {
+deferredPrompt.prompt();
 
-    const modal = document.getElementById("imageModal");
+const choice=await deferredPrompt.userChoice;
 
-    const modalImage = document.getElementById("modalImage");
+if(choice.outcome==="accepted"){
 
-    if (!modal || !modalImage) return;
-
-    modal.style.display = "flex";
-
-    modalImage.src = imageSrc;
+showNotification("Thanks for installing Queen Marie Tattoos!");
 
 }
 
-function closeImage() {
-
-    const modal = document.getElementById("imageModal");
-
-    if (!modal) return;
-
-    modal.style.display = "none";
+deferredPrompt=null;
 
 }
 
-const galleryImages = document.querySelectorAll(".gallery-preview img");
+/*==================================
+SHARE APP
+==================================*/
 
-galleryImages.forEach(image => {
+async function shareWebsite(){
 
-    image.addEventListener("click", () => {
+const shareData={
 
-        openImage(image.src);
+title:APP_NAME,
 
-    });
+text:"💖 Check out Queen Marie Tattoos! Luxury custom tattoos in East Texas.",
 
-});
-
-
-window.addEventListener("click", (event) => {
-
-    const modal = document.getElementById("imageModal");
-
-    if (!modal) return;
-
-    if (event.target === modal) {
-
-        closeImage();
-
-    }
-
-});
-
-const buttons = document.querySelectorAll(
-
-".main-btn, .share-btn, .social-btn"
-
-);
-
-buttons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        button.style.transform = "scale(.96)";
-
-        setTimeout(() => {
-
-            button.style.transform = "";
-
-        },150);
-
-    });
-
-});
-
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach((entry) => {
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-});
-
-sections.forEach(section => {
-
-    observer.observe(section);
-
-});
-
-function searchGallery() {
-
-    const input = document.getElementById("searchInput");
-
-    if (!input) return;
-
-    const filter = input.value.toLowerCase();
-
-    const images = document.querySelectorAll(".gallery-preview img");
-
-    images.forEach(image => {
-
-        if (image.alt.toLowerCase().includes(filter)) {
-
-            image.style.display = "block";
-
-        } else {
-
-            image.style.display = "none";
-
-        }
-
-    });
-
-}
-
-function saveFavorite(image) {
-
-    let favorites = JSON.parse(localStorage.getItem("queenFavorites")) || [];
-
-    if (!favorites.includes(image)) {
-
-        favorites.push(image);
-
-        localStorage.setItem("queenFavorites", JSON.stringify(favorites));
-
-        showNotification("Tattoo added to Favorites ❤️");
-
-    }
-
-}
-
-function showNotification(message) {
-
-    const notification = document.getElementById("notification");
-
-    if (!notification) return;
-
-    notification.textContent = message;
-
-    notification.classList.add("show");
-
-    setTimeout(() => {
-
-        notification.classList.remove("show");
-
-    },3000);
-
-}
-
-function validateContactForm() {
-
-    const form = document.getElementById("contactForm");
-
-    if (!form) return true;
-
-    const required = form.querySelectorAll("[required]");
-
-    for (let field of required) {
-
-        if (field.value.trim() === "") {
-
-            alert("Please complete all required fields.");
-
-            field.focus();
-
-            return false;
-
-        }
-
-    }
-
-    return true;
-
-}
-
-function validateBookingForm() {
-
-    const form = document.getElementById("bookingForm");
-
-    if (!form) return true;
-
-    const required = form.querySelectorAll("[required]");
-
-    for (let field of required) {
-
-        if (field.value.trim() === "") {
-
-            alert("Please complete all required fields.");
-
-            field.focus();
-
-            return false;
-
-        }
-
-    }
-
-    return true;
-
-}
-
-window.addEventListener("online", () => {
-
-    showNotification("You're back online.");
-
-});
-
-window.addEventListener("offline", () => {
-
-    showNotification("No internet connection.");
-
-});
-
-document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-
-        closeImage();
-
-    }
-
-    if (event.key === "Home") {
-
-        scrollToTop();
-
-    }
-
-});
-
-window.addEventListener("load", () => {
-
-    const loader = document.getElementById("loader");
-
-    if (loader) {
-
-        setTimeout(() => {
-
-            loader.style.opacity = "0";
-
-            setTimeout(() => {
-
-                loader.style.display = "none";
-
-            },500);
-
-        },700);
-
-    }
-
-});
-
-window.onerror = function(message, file, line) {
-
-    console.error("JavaScript Error");
-
-    console.error(message);
-
-    console.error(file);
-
-    console.error(line);
+url:window.location.href
 
 };
 
-function initializeApp() {
+if(navigator.share){
 
-    updateYear();
+try{
 
-    startSlideshow();
+await navigator.share(shareData);
 
-    console.log(APP_NAME + " Loaded Successfully");
+showNotification("Thanks for sharing!");
+
+}catch(error){
+
+console.log(error);
 
 }
 
-document.addEventListener("DOMContentLoaded", initializeApp);
+}else{
+
+navigator.clipboard.writeText(window.location.href);
+
+showNotification("Website link copied!");
+
+}
+
+}
+
+/*==================================
+IMAGE MODAL
+==================================*/
+
+function openImage(imageSrc){
+
+const modal=document.getElementById("imageModal");
+
+const modalImage=document.getElementById("modalImage");
+
+if(!modal||!modalImage) return;
+
+modal.style.display="flex";
+
+modalImage.src=imageSrc;
+
+document.body.style.overflow="hidden";
+
+}
+
+function closeImage(){
+
+const modal=document.getElementById("imageModal");
+
+if(!modal) return;
+
+modal.style.display="none";
+
+document.body.style.overflow="auto";
+
+}
+
+/*==================================
+GALLERY IMAGES
+==================================*/
+
+const galleryImages=document.querySelectorAll(".gallery-preview img");
+
+galleryImages.forEach((image)=>{
+
+image.addEventListener("click",()=>{
+
+openImage(image.src);
+
+});
+
+});
+
+/*==================================
+CLOSE MODAL
+==================================*/
+
+window.addEventListener("click",(event)=>{
+
+const modal=document.getElementById("imageModal");
+
+if(!modal) return;
+
+if(event.target===modal){
+
+closeImage();
+
+}
+
+});
+
+document.addEventListener("keydown",(event)=>{
+
+if(event.key==="Escape"){
+
+closeImage();
+
+}
+
+});
+
+/*==================================
+SEARCH GALLERY
+==================================*/
+
+function searchGallery(){
+
+const input=document.getElementById("searchInput");
+
+if(!input) return;
+
+const filter=input.value.toLowerCase();
+
+galleryImages.forEach((image)=>{
+
+const card=image.closest(".gallery-card") || image.parentElement;
+
+const text=image.alt.toLowerCase();
+
+if(text.includes(filter)){
+
+card.style.display="";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+/*==================================
+SAVE FAVORITES
+==================================*/
+
+function saveFavorite(image){
+
+let favorites=JSON.parse(localStorage.getItem("queenFavorites")) || [];
+
+if(!favorites.includes(image)){
+
+favorites.push(image);
+
+localStorage.setItem("queenFavorites",JSON.stringify(favorites));
+
+showNotification("❤️ Tattoo added to Favorites");
+
+}else{
+
+showNotification("Already in Favorites");
+
+}
+
+}
+
+/*==================================
+BUTTON ANIMATION
+==================================*/
+
+const buttons=document.querySelectorAll(
+
+".primary-btn,.secondary-btn,.dashboard-card,.floating-btn,.main-btn,.share-btn,.social-btn"
+
+);
+
+buttons.forEach((button)=>{
+
+button.addEventListener("click",()=>{
+
+button.style.transform="scale(.96)";
+
+setTimeout(()=>{
+
+button.style.transform="";
+
+},150);
+
+});
+
+});
+
+
+/*==================================
+SECTION ANIMATION
+==================================*/
+
+const sections=document.querySelectorAll("section");
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+sections.forEach((section)=>{
+
+observer.observe(section);
+
+});
+
+
+/*==================================
+NOTIFICATIONS
+==================================*/
+
+function showNotification(message){
+
+const notification=document.getElementById("notification");
+
+if(!notification) return;
+
+notification.textContent=message;
+
+notification.classList.add("show");
+
+setTimeout(()=>{
+
+notification.classList.remove("show");
+
+},3000);
+
+}
+
+
+/*==================================
+CONTACT FORM
+==================================*/
+
+function validateContactForm(){
+
+const form=document.getElementById("contactForm");
+
+if(!form) return true;
+
+const required=form.querySelectorAll("[required]");
+
+for(const field of required){
+
+if(field.value.trim()===""){
+
+showNotification("Please complete all required fields.");
+
+field.focus();
+
+return false;
+
+}
+
+}
+
+return true;
+
+}
+
+
+/*==================================
+BOOKING FORM
+==================================*/
+
+function validateBookingForm(){
+
+const form=document.getElementById("bookingForm");
+
+if(!form) return true;
+
+const required=form.querySelectorAll("[required]");
+
+for(const field of required){
+
+if(field.value.trim()===""){
+
+showNotification("Please complete all required fields.");
+
+field.focus();
+
+return false;
+
+}
+
+}
+
+showNotification("Booking request submitted!");
+
+return true;
+
+}
+
+
+/*==================================
+ONLINE / OFFLINE
+==================================*/
+
+window.addEventListener("online",()=>{
+
+showNotification("🟢 You're back online.");
+
+});
+
+window.addEventListener("offline",()=>{
+
+showNotification("🔴 No internet connection.");
+
+});
+
+
+/*==================================
+LOADER
+==================================*/
+
+window.addEventListener("load",()=>{
+
+const loader=document.getElementById("loader");
+
+if(loader){
+
+setTimeout(()=>{
+
+loader.style.opacity="0";
+
+setTimeout(()=>{
+
+loader.style.display="none";
+
+},500);
+
+},700);
+
+}
+
+});
+
+
+/*==================================
+ERROR HANDLER
+==================================*/
+
+window.onerror=function(message,file,line){
+
+console.error("JavaScript Error");
+
+console.error(message);
+
+console.error(file);
+
+console.error(line);
+
+};
+
+
+/*==================================
+INITIALIZE APP
+==================================*/
+
+function initializeApp(){
+
+updateYear();
+
+startSlideshow();
+
+console.log(APP_NAME+" Loaded Successfully");
+
+}
+
+document.addEventListener("DOMContentLoaded",initializeApp);
+
+
+/*==================================
+END OF SCRIPT
+==================================*/
