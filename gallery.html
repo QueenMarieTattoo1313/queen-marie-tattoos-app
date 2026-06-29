@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Queen Marie Tattoos</title>
+
+<meta name="description" content="Browse Queen Marie Tattoos portfolio and custom tattoo artwork.">
+
+<link rel="icon" href="../images/logo.png">
+
+<link rel="stylesheet" href="../styles.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo-container">
+
+<img src="../images/logo.png"
+alt="Queen Marie Tattoos Logo"
+class="logo">
+
+<h1>Gallery</h1>
+
+<p>Luxury • Precision • Art</p>
+
+</div>
+
+</header>
+
+<section class="welcome">
+
+<h2>Portfolio</h2>
+
+<p>
+Browse some of Queen Marie's tattoo work.
+Click any image to view it larger.
+</p>
+
+</section>
+
+<section class="search-bar">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search tattoos..."
+onkeyup="searchGallery()">
+
+</section>
+
+<section class="featured">
+
+<div class="gallery-preview">
+
+<img src="../images/tattoo1.jpg"
+alt="Rose Tattoo">
+
+<img src="../images/tattoo2.jpg"
+alt="Sleeve Tattoo">
+
+<img src="../images/tattoo3.jpg"
+alt="Portrait Tattoo">
+
+<img src="../images/tattoo4.jpg"
+alt="Floral Tattoo">
+
+<img src="../images/tattoo5.jpg"
+alt="Butterfly Tattoo">
+
+<img src="../images/tattoo6.jpg"
+alt="Lion Tattoo">
+
+<img src="../images/tattoo7.jpg"
+alt="Cross Tattoo">
+
+<img src="../images/tattoo8.jpg"
+alt="Script Tattoo">
+
+</div>
+
+</section>
+
+<div id="imageModal"
+style="display:none;"
+class="image-modal">
+
+<span
+class="close"
+onclick="closeImage()">
+
+&times;
+
+</span>
+
+<img
+id="modalImage"
+class="modal-content">
+
+</div>
+
+<section class="main-buttons">
+
+<a href="booking.html" class="main-btn">
+
+📅 Book Appointment
+
+</a>
+
+<a href="https://web.getporter.io/artist/queen-marie"
+target="_blank"
+class="main-btn">
+
+💳 Pay Deposit
+
+</a>
+
+</section>
+
+<div style="text-align:center;margin:40px;">
+
+<a href="../index.html"
+class="back-button">
+
+← Back Home
+
+</a>
+
+</div>
+
+<footer>
+
+<p>
+
+© <span id="year"></span> Queen Marie Tattoos
+
+</p>
+
+<p>
+
+Luxury Custom Tattoos
+
+</p>
+
+</footer>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>
