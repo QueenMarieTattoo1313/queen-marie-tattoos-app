@@ -1,110 +1,529 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>Reviews | Queen Marie Tattoos</title>
+<title>
 
-<meta name="description" content="Read reviews from Queen Marie Tattoos clients.">
+Client Reviews | Queen Marie Tattoos
 
-<link rel="icon" href="../images/logo.png">
+</title>
 
-<link rel="stylesheet" href="../styles.css">
+<meta name="theme-color"
+content="#ff4fa5">
+
+<meta name="description"
+content="Leave a review for Queen Marie Tattoos">
+
+<link rel="icon"
+href="images/logo.png">
+
+<link rel="stylesheet"
+href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
 
 </head>
 
 <body>
 
-<header>
+<div class="background-glow"></div>
 
-<div class="logo-container">
+<div class="sparkles"></div>
 
-<img src="../images/logo.png"
-alt="Queen Marie Tattoos Logo"
-class="logo">
+<div class="app-container">
 
-<h1>Client Reviews</h1>
+<header class="page-header">
 
-<p>Luxury • Precision • Art</p>
+<a
+href="javascript:history.back()"
+class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back
+
+</a>
+
+<div class="page-title">
+
+<img
+src="images/logo.png"
+class="logo"
+alt="Queen Marie Tattoos">
+
+<div>
+
+<h1>
+
+Client Reviews
+
+</h1>
+
+<p>
+
+Queen Marie Tattoos
+
+</p>
+
+</div>
 
 </div>
 
 </header>
 
-<section class="welcome">
+<section class="gallery-hero">
 
-<h2>What Our Clients Say</h2>
+<h2>
+
+We'd Love Your Feedback
+
+</h2>
 
 <p>
 
-Customer satisfaction is our top priority.
-Here are a few reviews from happy clients.
+Your experience matters to us.
+
+If you've been tattooed by Queen Marie, we'd love to hear about your experience. Your review helps future clients and helps our business continue to grow.
 
 </p>
 
 </section>
 
-<section class="featured">
+ <!--==================================
+LEAVE A REVIEW
+===================================-->
 
-<div class="flash-grid">
+<section class="glass-card">
 
-<div class="flash-card">
+<div class="card-icon">
 
-<h3>⭐⭐⭐⭐⭐</h3>
-
-<p>
-
-"Queen Marie exceeded my expectations. The tattoo came out perfect and the experience was amazing!"
-
-</p>
-
-<strong>- Jessica</strong>
+<i class="fa-solid fa-star"></i>
 
 </div>
 
-<div class="flash-card">
+<h2>
 
-<h3>⭐⭐⭐⭐⭐</h3>
+Leave Your Review
+
+</h2>
 
 <p>
 
-"Professional, clean, and very talented. I'll definitely be coming back."
+We appreciate your feedback. Tell us about your experience with Queen Marie Tattoos.
 
 </p>
 
-<strong>- Michael</strong>
+<form
+id="reviewForm"
+class="review-form">
+
+<div class="form-group">
+
+<label>
+
+Full Name
+
+</label>
+
+<input
+type="text"
+id="reviewName"
+placeholder="Enter your full name"
+required>
 
 </div>
 
-<div class="flash-card">
+<div class="form-group">
 
-<h3>⭐⭐⭐⭐⭐</h3>
+<label>
 
-<p>
+Phone Number (Optional)
 
-"My sleeve turned out incredible. Queen Marie is truly gifted."
+</label>
 
-</p>
-
-<strong>- Ashley</strong>
+<input
+type="tel"
+id="reviewPhone"
+placeholder="(555) 555-5555">
 
 </div>
 
-<div class="flash-card">
+<div class="form-group">
 
-<h3>⭐⭐⭐⭐⭐</h3>
+<label>
 
-<p>
+Email Address (Optional)
 
-"Very professional from start to finish. Highly recommend."
+</label>
+
+<input
+type="email"
+id="reviewEmail"
+placeholder="name@email.com">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Appointment Date
+
+</label>
+
+<input
+type="date"
+id="reviewDate">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Overall Rating
+
+</label>
+
+<select
+id="reviewRating"
+required>
+
+<option value="">
+
+Select Rating
+
+</option>
+
+<option value="5">
+
+⭐⭐⭐⭐⭐ Excellent
+
+</option>
+
+<option value="4">
+
+⭐⭐⭐⭐ Very Good
+
+</option>
+
+<option value="3">
+
+⭐⭐⭐ Good
+
+</option>
+
+<option value="2">
+
+⭐⭐ Fair
+
+</option>
+
+<option value="1">
+
+⭐ Poor
+
+</option>
+
+</select>
+
+</div> 
+
+  <!--==================================
+REVIEW DETAILS
+===================================-->
+
+<div class="form-group">
+
+<label>
+
+Tattoo Type
+
+</label>
+
+<select
+id="tattooType"
+required>
+
+<option value="">
+
+Select Tattoo Type
+
+</option>
+
+<option>
+
+Fine Line
+
+</option>
+
+<option>
+
+Black & Grey
+
+</option>
+
+<option>
+
+Color Tattoo
+
+</option>
+
+<option>
+
+Memorial Tattoo
+
+</option>
+
+<option>
+
+Lettering
+
+</option>
+
+<option>
+
+Flash Tattoo
+
+</option>
+
+<option>
+
+Custom Tattoo
+
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Tattoo Placement
+
+</label>
+
+<input
+type="text"
+id="tattooPlacement"
+placeholder="Arm, Leg, Chest, Back, etc.">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Upload Your Tattoo Photo (Optional)
+
+</label>
+
+<input
+type="file"
+id="tattooPhoto"
+accept="image/*">
+
+<p class="form-note">
+
+Show off your new tattoo! Your photo may be featured with your review after approval.
 
 </p>
 
-<strong>- David</strong>
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Would You Recommend Queen Marie Tattoos?
+
+</label>
+
+<select
+id="recommend"
+required>
+
+<option value="">
+
+Choose One
+
+</option>
+
+<option>
+
+Yes, Absolutely!
+
+</option>
+
+<option>
+
+Yes
+
+</option>
+
+<option>
+
+Maybe
+
+</option>
+
+<option>
+
+Not At This Time
+
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Your Review
+
+</label>
+
+<textarea
+id="reviewMessage"
+rows="8"
+placeholder="Tell us about your experience with Queen Marie Tattoos..."
+required>
+
+</textarea>
+
+</div>
+
+
+<button
+type="submit"
+class="primary-btn booking-submit">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Submit Review
+
+</button>
+
+</form>
+
+</section>
+
+<!--==================================
+WHY YOUR REVIEW MATTERS
+===================================-->
+
+<section class="glass-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+<h2>
+
+Why Your Review Matters
+
+</h2>
+
+<p>
+
+Your review helps future clients feel confident choosing Queen Marie Tattoos.
+
+Every review is appreciated and helps us continue providing high-quality artwork and excellent customer service.
+
+</p>
+
+<div class="feature-grid">
+
+<div class="feature-box">
+
+<i class="fa-solid fa-users"></i>
+
+<h3>
+
+Help Others
+
+</h3>
+
+<p>
+
+Share your experience with future clients.
+
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<i class="fa-solid fa-star"></i>
+
+<h3>
+
+Support Local
+
+</h3>
+
+<p>
+
+Help Queen Marie Tattoos continue to grow.
+
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<i class="fa-solid fa-camera"></i>
+
+<h3>
+
+Show Off
+
+</h3>
+
+<p>
+
+Upload your healed tattoo photo with your review.
+
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<i class="fa-solid fa-award"></i>
+
+<h3>
+
+Featured Reviews
+
+</h3>
+
+<p>
+
+Approved reviews may be featured on our website and social media.
+
+</p>
 
 </div>
 
@@ -112,41 +531,192 @@ Here are a few reviews from happy clients.
 
 </section>
 
-<section class="main-buttons">
 
-<a href="booking.html" class="main-btn">
 
-📅 Book Appointment
+<!--==================================
+THANK YOU
+===================================-->
+
+<section class="glass-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-hand-holding-heart"></i>
+
+</div>
+
+<h2>
+
+Thank You!
+
+</h2>
+
+<p>
+
+Thank you for trusting Queen Marie Tattoos with your artwork.
+
+We truly appreciate your support and look forward to seeing you again for your next tattoo.
+
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="booking.html"
+class="primary-btn">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Book Another Appointment
 
 </a>
 
-<a href="https://web.getporter.io/artist/queen-marie"
+<a
+href="https://web.getporter.io/artist/queen-marie"
 target="_blank"
-class="main-btn">
+class="secondary-btn">
 
-💳 Pay Deposit
+<i class="fa-solid fa-credit-card"></i>
 
-</a>
-
-</section>
-
-<div style="text-align:center;margin:40px;">
-
-<a href="../index.html" class="back-button">
-
-← Back Home
+Pay Deposit
 
 </a>
 
 </div>
 
-<footer>
+</section>
+
+
+
+<!--==================================
+COMING SOON
+===================================-->
+
+<section class="glass-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-comments"></i>
+
+</div>
+
+<h2>
+
+Client Reviews Coming Soon
+
+</h2>
 
 <p>
 
-© <span id="year"></span> Queen Marie Tattoos
+As reviews are submitted and approved, they'll be displayed here for everyone to see.
+
+Thank you for helping Queen Marie Tattoos grow!
 
 </p>
+
+</section>  
+
+<!--==================================
+FLOATING ACTION BUTTONS
+===================================-->
+
+<div class="floating-buttons">
+
+<a
+href="tel:2147109249"
+class="floating-btn"
+title="Call">
+
+<i class="fa-solid fa-phone"></i>
+
+</a>
+
+<a
+href="booking.html"
+class="floating-btn"
+title="Book Appointment">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</a>
+
+<a
+href="sms:2147109249"
+class="floating-btn"
+title="Text Message">
+
+<i class="fa-solid fa-comment-dots"></i>
+
+</a>
+
+</div>
+
+
+<!--==================================
+BOTTOM NAVIGATION
+===================================-->
+
+<nav class="bottom-nav">
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</a>
+
+<a href="gallery.html">
+
+<i class="fa-solid fa-images"></i>
+
+<span>Gallery</span>
+
+</a>
+
+<a href="booking.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<span>Book</span>
+
+</a>
+
+<a href="reviews.html" class="active">
+
+<i class="fa-solid fa-star"></i>
+
+<span>Reviews</span>
+
+</a>
+
+<a href="contact.html">
+
+<i class="fa-solid fa-address-book"></i>
+
+<span>Contact</span>
+
+</a>
+
+</nav>
+
+
+<!--==================================
+FOOTER
+===================================-->
+
+<footer class="footer">
+
+<img
+src="images/logo.png"
+class="footer-logo"
+alt="Queen Marie Tattoos">
+
+<h3>
+
+Queen Marie Tattoos
+
+</h3>
 
 <p>
 
@@ -154,10 +724,55 @@ Luxury Custom Tattoos
 
 </p>
 
+<p>
+
+Tyler • East Texas
+
+</p>
+
+<p>
+
+© <span id="year"></span>
+
+Queen Marie Tattoos
+
+</p>
+
 </footer>
 
-<script src="../script.js"></script>
+
+<!--==================================
+NOTIFICATION
+===================================-->
+
+<div
+id="notification"
+class="notification">
+
+</div>
+
+
+<!--==================================
+LOADER
+===================================-->
+
+<div id="loader">
+
+<div class="loader-spinner">
+
+</div>
+
+</div>
+
+
+<!--==================================
+JAVASCRIPT
+===================================-->
+
+<script src="script.js"></script>
+
+</div>
 
 </body>
 
-</html>
+</html>  
