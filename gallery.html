@@ -5,95 +5,607 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Gallery | Queen Marie Tattoos</title>
 
-<meta name="description" content="Browse Queen Marie Tattoos portfolio and custom tattoo artwork.">
+<meta name="theme-color"
+content="#ff4fa5">
 
-<link rel="icon" href="../images/logo.png">
+<link rel="icon"
+href="images/logo.png">
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet"
+href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
 
 </head>
 
 <body>
 
-<header>
+<div class="background-glow"></div>
 
-<div class="logo-container">
+<div class="sparkles"></div>
 
-<img src="../images/logo.png"
-alt="Queen Marie Tattoos Logo"
-class="logo">
+<div class="app-container">
 
-<h1>Gallery</h1>
+<header class="page-header">
 
-<p>Luxury • Precision • Art</p>
+<a href="javascript:history.back()"
+class="back-btn">
+
+← Back
+
+</a>
+
+<div class="page-title">
+
+<img
+src="images/logo.png"
+class="logo"
+alt="Queen Marie">
+
+<div>
+
+<h1>
+
+Gallery
+
+</h1>
+
+<p>
+
+Queen Marie Tattoos
+
+</p>
+
+</div>
 
 </div>
 
 </header>
 
-<section class="welcome">
+<section class="gallery-hero">
 
-<h2>Portfolio</h2>
+<h2>
+
+Luxury Portfolio
+
+</h2>
 
 <p>
-Browse some of Queen Marie's tattoo work.
-Click any image to view it larger.
+
+Browse by tattoo style.
+
+Tap any tattoo to enlarge.
+
 </p>
 
-</section>
-
-<section class="search-bar">
-
 <input
+
 type="text"
+
 id="searchInput"
+
+class="search-box"
+
 placeholder="Search tattoos..."
+
 onkeyup="searchGallery()">
 
 </section>
 
-<section class="featured">
+<!-- ==================================
+FEATURED TATTOOS
+=================================== -->
 
-<div class="gallery-preview">
+<section class="gallery-category">
 
-<img src="../images/tattoo1.jpg"
-alt="Rose Tattoo">
+<div class="category-header">
 
-<img src="../images/tattoo2.jpg"
-alt="Sleeve Tattoo">
+<h2>Featured Tattoos</h2>
 
-<img src="../images/tattoo3.jpg"
-alt="Portrait Tattoo">
+<a href="booking.html" class="view-all">
 
-<img src="../images/tattoo4.jpg"
-alt="Floral Tattoo">
+Book Appointment →
 
-<img src="../images/tattoo5.jpg"
-alt="Butterfly Tattoo">
+</a>
 
-<img src="../images/tattoo6.jpg"
-alt="Lion Tattoo">
+</div>
 
-<img src="../images/tattoo7.jpg"
-alt="Cross Tattoo">
+<div class="featured-slider">
 
-<img src="../images/tattoo8.jpg"
-alt="Script Tattoo">
+<div class="featured-card">
+
+<img
+src="images/IMG_1.PNG"
+alt="Featured Tattoo"
+onclick="openImage(this.src)">
+
+<div class="featured-overlay">
+
+<h3>Featured Design</h3>
+
+<p>Custom Luxury Tattoo</p>
+
+<a href="booking.html" class="gallery-book-btn">
+
+Book This Tattoo
+
+</a>
+
+</div>
+
+</div>
+
+<div class="featured-card">
+
+<img
+src="images/IMG_2.PNG"
+alt="Featured Tattoo"
+onclick="openImage(this.src)">
+
+<div class="featured-overlay">
+
+<h3>Fine Line Artwork</h3>
+
+<p>Queen Marie Collection</p>
+
+<a href="booking.html" class="gallery-book-btn">
+
+Book This Tattoo
+
+</a>
+
+</div>
+
+</div>
+
+<div class="featured-card">
+
+<img
+src="images/IMG_3.PNG"
+alt="Featured Tattoo"
+onclick="openImage(this.src)">
+
+<div class="featured-overlay">
+
+<h3>Black & Grey</h3>
+
+<p>Premium Artwork</p>
+
+<a href="booking.html" class="gallery-book-btn">
+
+Book This Tattoo
+
+</a>
+
+</div>
+
+</div>
+
+<div class="featured-card">
+
+<img
+src="images/IMG_4.PNG"
+alt="Featured Tattoo"
+onclick="openImage(this.src)">
+
+<div class="featured-overlay">
+
+<h3>Customer Favorite</h3>
+
+<p>Luxury Ink</p>
+
+<a href="booking.html" class="gallery-book-btn">
+
+Book This Tattoo
+
+</a>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<div id="imageModal"
-style="display:none;"
-class="image-modal">
 
-<span
-class="close"
+
+<!-- ==================================
+BLACK & GREY
+=================================== -->
+
+<section class="gallery-category">
+
+<div class="category-header">
+
+<h2>Black & Grey</h2>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+
+<img
+src="images/IMG_5.PNG"
+alt="Tattoo"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/IMG_6.PNG"
+alt="Tattoo"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/IMG_7.PNG"
+alt="Tattoo"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/IMG_8.PNG"
+alt="Tattoo"
+onclick="openImage(this.src)">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================
+COLOR TATTOOS
+=================================== -->
+
+<section class="gallery-category">
+
+<div class="category-header">
+
+<h2>Color Tattoos</h2>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="images/IMG_9.PNG"
+alt="Color Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+<div class="gallery-item">
+<img src="images/IMG_10.PNG"
+alt="Color Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+<div class="gallery-item">
+<img src="images/IMG_11.PNG"
+alt="Color Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+<div class="gallery-item">
+<img src="images/IMG_12.PNG"
+alt="Color Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================
+LETTERING
+=================================== -->
+
+<section class="gallery-category">
+
+<div class="category-header">
+
+<h2>Lettering</h2>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="images/IMG_13.PNG"
+alt="Lettering Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+<div class="gallery-item">
+<img src="images/IMG_14.PNG"
+alt="Lettering Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+<div class="gallery-item">
+<img src="images/IMG_15.PNG"
+alt="Lettering Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+<div class="gallery-item">
+<img src="images/IMG_16.PNG"
+alt="Lettering Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================
+MEMORIAL TATTOOS
+=================================== -->
+
+<section class="gallery-category">
+
+<div class="category-header">
+
+<h2>Memorial Tattoos</h2>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="images/IMG_17.PNG"
+alt="Memorial Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+<div class="gallery-item">
+<img src="images/IMG_18.PNG"
+alt="Memorial Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+<div class="gallery-item">
+<img src="images/IMG_19.PNG"
+alt="Memorial Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+<div class="gallery-item">
+<img src="images/IMG_20.PNG"
+alt="Memorial Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================
+FINE LINE
+=================================== -->
+
+<section class="gallery-category">
+
+<div class="category-header">
+
+<h2>Fine Line Tattoos</h2>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="images/IMG_21.PNG"
+alt="Fine Line Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+<div class="gallery-item">
+<img src="images/IMG_22.PNG"
+alt="Fine Line Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+<div class="gallery-item">
+<img src="images/IMG_23.PNG"
+alt="Fine Line Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+<div class="gallery-item">
+<img src="images/IMG_24.PNG"
+alt="Fine Line Tattoo"
+onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</section>  
+
+<!-- ==================================
+CUSTOM COLLECTION
+================================== -->
+
+<section class="gallery-category">
+
+<div class="category-header">
+
+<h2>Custom Collection</h2>
+
+<a href="booking.html" class="view-all">
+
+Request a Custom Tattoo →
+
+</a>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+
+<img
+src="images/IMG_25.PNG"
+alt="Custom Tattoo"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/IMG_26.PNG"
+alt="Custom Tattoo"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/IMG_27.PNG"
+alt="Custom Tattoo"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/IMG_28.PNG"
+alt="Custom Tattoo"
+onclick="openImage(this.src)">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================
+FLASH TATTOOS
+================================== -->
+
+<section class="gallery-category">
+
+<div class="category-header">
+
+<h2>Flash Tattoos</h2>
+
+<a href="flash.html" class="view-all">
+
+View Flash Sheet →
+
+</a>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+
+<img
+src="images/IMG_29.PNG"
+alt="Flash Tattoo"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/IMG_30.PNG"
+alt="Flash Tattoo"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/IMG_31.PNG"
+alt="Flash Tattoo"
+onclick="openImage(this.src)">
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="images/IMG_32.PNG"
+alt="Flash Tattoo"
+onclick="openImage(this.src)">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================
+BOOK NOW BANNER
+================================== -->
+
+<section class="booking-banner">
+
+<h2>
+
+Ready For Your Next Tattoo?
+
+</h2>
+
+<p>
+
+Book your consultation today and let's create something unforgettable.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="booking.html" class="primary-btn">
+
+Book Appointment
+
+</a>
+
+<a href="contact.html" class="secondary-btn">
+
+Contact Artist
+
+</a>
+
+</div>
+
+</section>  
+
+<!--==================================
+IMAGE MODAL
+===================================-->
+
+<div id="imageModal" class="image-modal">
+
+<span class="close-modal"
 onclick="closeImage()">
 
 &times;
@@ -101,47 +613,133 @@ onclick="closeImage()">
 </span>
 
 <img
+
 id="modalImage"
-class="modal-content">
+
+class="modal-image"
+
+alt="Tattoo Preview">
 
 </div>
 
-<section class="main-buttons">
 
-<a href="booking.html" class="main-btn">
+<!--==================================
+FLOATING BUTTONS
+===================================-->
 
-📅 Book Appointment
+<div class="floating-buttons">
+
+<a
+
+href="tel:2147109249"
+
+class="floating-btn"
+
+title="Call">
+
+<i class="fa-solid fa-phone"></i>
 
 </a>
 
-<a href="https://web.getporter.io/artist/queen-marie"
-target="_blank"
-class="main-btn">
+<a
 
-💳 Pay Deposit
+href="booking.html"
+
+class="floating-btn"
+
+title="Book">
+
+<i class="fa-solid fa-calendar-days"></i>
 
 </a>
 
-</section>
+<a
 
-<div style="text-align:center;margin:40px;">
+href="contact.html"
 
-<a href="../index.html"
-class="back-button">
+class="floating-btn"
 
-← Back Home
+title="Message">
+
+<i class="fa-solid fa-comment-dots"></i>
 
 </a>
 
 </div>
 
-<footer>
 
-<p>
+<!--==================================
+BOTTOM NAVIGATION
+===================================-->
 
-© <span id="year"></span> Queen Marie Tattoos
+<nav class="bottom-nav">
 
-</p>
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</a>
+
+<a
+
+href="gallery.html"
+
+class="active">
+
+<i class="fa-solid fa-images"></i>
+
+<span>Gallery</span>
+
+</a>
+
+<a href="booking.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<span>Book</span>
+
+</a>
+
+<a href="reviews.html">
+
+<i class="fa-solid fa-star"></i>
+
+<span>Reviews</span>
+
+</a>
+
+<a href="contact.html">
+
+<i class="fa-solid fa-bars"></i>
+
+<span>More</span>
+
+</a>
+
+</nav>
+
+
+<!--==================================
+FOOTER
+===================================-->
+
+<footer class="footer">
+
+<img
+
+src="images/logo.png"
+
+class="footer-logo"
+
+alt="Queen Marie">
+
+<h3>
+
+Queen Marie Tattoos
+
+</h3>
 
 <p>
 
@@ -149,10 +747,43 @@ Luxury Custom Tattoos
 
 </p>
 
+<p>
+
+Tyler • Bullard • East Texas
+
+</p>
+
+<p>
+
+© <span id="year"></span>
+
+Queen Marie Tattoos
+
+</p>
+
 </footer>
 
-<script src="../script.js"></script>
+
+<div
+
+id="notification"
+
+class="notification">
+
+</div>
+
+<div id="loader">
+
+<div class="loader-spinner"></div>
+
+</div>
+
+<script src="https://kit.fontawesome.com/6b7d8d6c4d.js" crossorigin="anonymous"></script>
+
+<script src="script.js"></script>
+
+</div>
 
 </body>
 
-</html>
+</html>  
