@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Appointment | Queen Marie Tattoos</title>
+
+    <meta name="description" content="Book your tattoo appointment with Queen Marie Tattoos.">
+
+    <link rel="stylesheet" href="../styles.css">
+
+    <link rel="icon" href="../images/logo.png">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo-container">
+
+        <img src="../images/logo.png"
+             alt="Queen Marie Tattoos Logo"
+             class="logo">
+
+        <h1>Book Appointment</h1>
+
+        <p>Luxury • Precision • Art</p>
+
+    </div>
+
+</header>
+
+<section class="welcome">
+
+    <h2>Book Your Tattoo</h2>
+
+    <p>
+        Complete the form below to request your appointment.
+        Once submitted, Queen Marie will contact you to confirm
+        your date and time.
+    </p>
+
+</section>
+
+<form id="bookingForm" onsubmit="return validateBookingForm()">
+
+    <input
+        type="text"
+        id="clientName"
+        placeholder="Full Name"
+        required>
+
+    <input
+        type="tel"
+        id="phone"
+        placeholder="Phone Number"
+        required>
+
+    <input
+        type="email"
+        id="email"
+        placeholder="Email Address"
+        required>
+
+    <input
+        type="date"
+        id="appointmentDate"
+        required>
+
+    <select id="size" required>
+
+        <option value="">Tattoo Size</option>
+
+        <option>Small</option>
+
+        <option>Medium</option>
+
+        <option>Large</option>
+
+        <option>Sleeve</option>
+
+    </select>
+
+    <textarea
+        id="tattoo"
+        placeholder="Describe the tattoo you want..."
+        required></textarea>
+
+    <button type="submit">
+
+        📅 Request Appointment
+
+    </button>
+
+</form>
+
+<section class="main-buttons">
+
+    <a href="https://web.getporter.io/artist/queen-marie"
+       target="_blank"
+       class="main-btn">
+
+        💳 Pay Deposit
+
+    </a>
+
+</section>
+
+<section class="contact-home">
+
+    <h2>Questions?</h2>
+
+    <p>
+
+        📞
+        <a href="tel:2147109249">
+            214-710-9249
+        </a>
+
+    </p>
+
+    <p>
+
+        📧
+        <a href="mailto:donnamorales70@gmail.com">
+            donnamorales70@gmail.com
+        </a>
+
+    </p>
+
+</section>
+
+<div style="text-align:center; margin:40px;">
+
+    <a href="../index.html" class="back-button">
+
+        ← Back Home
+
+    </a>
+
+</div>
+
+<footer>
+
+    <p>
+        © <span id="year"></span> Queen Marie Tattoos
+    </p>
+
+    <p>
+        Luxury Custom Tattoos
+    </p>
+
+</footer>
+
+<script src="../script.js"></script>
+
+</body>
+</html>
