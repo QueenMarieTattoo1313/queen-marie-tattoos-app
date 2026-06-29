@@ -10,50 +10,59 @@ const slides = [
 ];
 
 let currentSlide = 0;
+let deferredPrompt = null;
 
 function startSlideshow() {
+
     const slide = document.getElementById("slideImage");
 
     if (!slide) return;
 
     setInterval(() => {
+
         currentSlide++;
 
         if (currentSlide >= slides.length) {
+
             currentSlide = 0;
+
         }
 
         slide.src = slides[currentSlide];
-    }, 3500);
+
+    }, 4000);
+
 }
 
-async function shareWebsite() {
+function updateYear() {
 
-    const shareData = {
-        title: APP_NAME,
-        text: "Check out Queen Marie Tattoos!",
-        url: window.location.href
-    };
+    const year = document.getElementById("year");
 
-    if (navigator.share) {
+    if (year) {
 
-        try {
-            await navigator.share(shareData);
-        } catch (error) {
-            console.log(error);
-        }
-
-    } else {
-
-        navigator.clipboard.writeText(window.location.href);
-
-        alert("App link copied to clipboard.");
+        year.textContent = new Date().getFullYear();
 
     }
 
 }
 
-let deferredPrompt;
+function goBack() {
+
+    history.back();
+
+}
+
+function scrollToTop() {
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
 
 window.addEventListener("beforeinstallprompt", (event) => {
 
@@ -64,7 +73,9 @@ window.addEventListener("beforeinstallprompt", (event) => {
     const installButton = document.getElementById("installApp");
 
     if (installButton) {
+
         installButton.style.display = "inline-block";
+
     }
 
 });
@@ -81,167 +92,37 @@ async function installApp() {
 
 }
 
-function goBack() {
-    window.history.back();
-}
+async function shareWebsite() {
 
-function scrollToTop() {
+    const shareData = {
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+        title: APP_NAME,
 
-}
+        text: "Check out Queen Marie Tattoos!",
 
-function updateYear() {
+        url: window.location.href
 
-    const year = document.getElementById("year");
+    };
 
-    if (year) {
-        year.textContent = new Date().getFullYear();
-    }
+    if (navigator.share) {
 
-}
+        try {
 
-const buttons = document.querySelectorAll(".main-btn, .share-btn, .social-btn");
+            await navigator.share(shareData);
 
-buttons.forEach(button => {
+        } catch (error) {
 
-    button.addEventListener("click", () => {
-
-        button.style.transform = "scale(.97)";
-
-        setTimeout(() => {
-
-            button.style.transform = "scale(1)";
-
-        }, 150);
-
-    });
-
-});
-
-window.addEventListener("load", () => {
-
-    document.body.style.opacity = "1";
-
-    const loader = document.getElementById("loader");
-
-    if (loader) {
-        loader.style.display = "none";
-    }
-
-});
-
-function searchGallery() {
-
-    const input = document.getElementById("searchInput");
-
-    if (!input) return;
-
-    const filter = input.value.toLowerCase();
-
-    const images = document.querySelectorAll(".gallery-preview img");
-
-    images.forEach((image) => {
-
-        const text = image.alt.toLowerCase();
-
-        if (text.includes(filter)) {
-
-            image.style.display = "block";
-
-        } else {
-
-            image.style.display = "none";
+            console.log(error);
 
         }
 
-    });
+    } else {
 
-}
+        navigator.clipboard.writeText(window.location.href);
 
-
-function favoriteTattoo(image) {
-
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-    if (!favorites.includes(image)) {
-
-        favorites.push(image);
+        alert("Website link copied to clipboard!");
 
     }
-
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-
-    alert("Tattoo added to Favorites!");
-
-}
-
-function bookAppointment() {
-
-    window.location.href = "pages/booking.html";
-
-}
-
-function openGallery() {
-
-    window.location.href = "pages/gallery.html";
-
-}
-
-function openFlashTattoos() {
-
-    window.location.href = "pages/flash.html";
-
-}
-
-function openReviews() {
-
-    window.location.href = "pages/reviews.html";
-
-}
-
-function openReferral() {
-
-    window.location.href = "pages/referral.html";
-
-}
-
-function openAftercare() {
-
-    window.location.href = "pages/aftercare.html";
-
-}
-
-function openContact() {
-
-    window.location.href = "pages/contact.html";
-
-}
-
-function callQueenMarie() {
-
-    window.location.href = "tel:2147109249";
-
-}
-
-function emailQueenMarie() {
-
-    window.location.href = "mailto:donnamorales70@gmail.com";
-
-}
-
-function openFacebook() {
-
-    window.open("#","_blank");
-
-}
-
-function openInstagram() {
-
-    window.open("#","_blank");
 
 }
 
@@ -269,7 +150,9 @@ function closeImage() {
 
 }
 
-document.querySelectorAll(".gallery-preview img").forEach(image => {
+const galleryImages = document.querySelectorAll(".gallery-preview img");
+
+galleryImages.forEach(image => {
 
     image.addEventListener("click", () => {
 
@@ -279,7 +162,8 @@ document.querySelectorAll(".gallery-preview img").forEach(image => {
 
 });
 
-window.addEventListener("click", function (event) {
+
+window.addEventListener("click", (event) => {
 
     const modal = document.getElementById("imageModal");
 
@@ -293,101 +177,35 @@ window.addEventListener("click", function (event) {
 
 });
 
-function validateContactForm() {
+const buttons = document.querySelectorAll(
 
-    const name = document.getElementById("name");
+".main-btn, .share-btn, .social-btn"
 
-    const email = document.getElementById("email");
+);
 
-    const message = document.getElementById("message");
+buttons.forEach(button => {
 
-    if (!name || !email || !message) return true;
+    button.addEventListener("click", () => {
 
-    if (name.value.trim() === "") {
+        button.style.transform = "scale(.96)";
 
-        alert("Please enter your name.");
+        setTimeout(() => {
 
-        name.focus();
+            button.style.transform = "";
 
-        return false;
+        },150);
 
-    }
+    });
 
-    if (email.value.trim() === "") {
-
-        alert("Please enter your email.");
-
-        email.focus();
-
-        return false;
-
-    }
-
-    if (message.value.trim() === "") {
-
-        alert("Please enter your message.");
-
-        message.focus();
-
-        return false;
-
-    }
-
-    return true;
-
-}
-
-function validateBookingForm() {
-
-    const client = document.getElementById("clientName");
-
-    const phone = document.getElementById("phone");
-
-    const tattoo = document.getElementById("tattoo");
-
-    if (!client || !phone || !tattoo) return true;
-
-    if (client.value.trim() === "") {
-
-        alert("Enter your name.");
-
-        client.focus();
-
-        return false;
-
-    }
-
-    if (phone.value.trim() === "") {
-
-        alert("Enter your phone number.");
-
-        phone.focus();
-
-        return false;
-
-    }
-
-    if (tattoo.value.trim() === "") {
-
-        alert("Describe the tattoo you want.");
-
-        tattoo.focus();
-
-        return false;
-
-    }
-
-    return true;
-
-}
+});
 
 const sections = document.querySelectorAll("section");
 
-const observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver((entries) => {
 
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
 
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
 
             entry.target.classList.add("show");
 
@@ -403,27 +221,25 @@ sections.forEach(section => {
 
 });
 
-function filterFlash(category) {
+function searchGallery() {
 
-    const cards = document.querySelectorAll(".flash-card");
+    const input = document.getElementById("searchInput");
 
-    cards.forEach(card => {
+    if (!input) return;
 
-        if (category === "all") {
+    const filter = input.value.toLowerCase();
 
-            card.style.display = "block";
+    const images = document.querySelectorAll(".gallery-preview img");
 
-            return;
+    images.forEach(image => {
 
-        }
+        if (image.alt.toLowerCase().includes(filter)) {
 
-        if (card.dataset.category === category) {
-
-            card.style.display = "block";
+            image.style.display = "block";
 
         } else {
 
-            card.style.display = "none";
+            image.style.display = "none";
 
         }
 
@@ -431,13 +247,19 @@ function filterFlash(category) {
 
 }
 
-function toggleMenu() {
+function saveFavorite(image) {
 
-    const menu = document.getElementById("mobileMenu");
+    let favorites = JSON.parse(localStorage.getItem("queenFavorites")) || [];
 
-    if (!menu) return;
+    if (!favorites.includes(image)) {
 
-    menu.classList.toggle("active");
+        favorites.push(image);
+
+        localStorage.setItem("queenFavorites", JSON.stringify(favorites));
+
+        showNotification("Tattoo added to Favorites ❤️");
+
+    }
 
 }
 
@@ -447,7 +269,7 @@ function showNotification(message) {
 
     if (!notification) return;
 
-    notification.innerHTML = message;
+    notification.textContent = message;
 
     notification.classList.add("show");
 
@@ -459,33 +281,109 @@ function showNotification(message) {
 
 }
 
-function saveFavorite(id){
+function validateContactForm() {
 
-    let favorites = JSON.parse(localStorage.getItem("queenFavorites")) || [];
+    const form = document.getElementById("contactForm");
 
-    if(!favorites.includes(id)){
+    if (!form) return true;
 
-        favorites.push(id);
+    const required = form.querySelectorAll("[required]");
 
-        localStorage.setItem("queenFavorites",JSON.stringify(favorites));
+    for (let field of required) {
 
-        showNotification("Tattoo added to Favorites ❤️");
+        if (field.value.trim() === "") {
+
+            alert("Please complete all required fields.");
+
+            field.focus();
+
+            return false;
+
+        }
 
     }
 
-}
-
-function removeFavorite(id){
-
-    let favorites = JSON.parse(localStorage.getItem("queenFavorites")) || [];
-
-    favorites = favorites.filter(item => item !== id);
-
-    localStorage.setItem("queenFavorites",JSON.stringify(favorites));
+    return true;
 
 }
 
-window.onerror = function (message, file, line) {
+function validateBookingForm() {
+
+    const form = document.getElementById("bookingForm");
+
+    if (!form) return true;
+
+    const required = form.querySelectorAll("[required]");
+
+    for (let field of required) {
+
+        if (field.value.trim() === "") {
+
+            alert("Please complete all required fields.");
+
+            field.focus();
+
+            return false;
+
+        }
+
+    }
+
+    return true;
+
+}
+
+window.addEventListener("online", () => {
+
+    showNotification("You're back online.");
+
+});
+
+window.addEventListener("offline", () => {
+
+    showNotification("No internet connection.");
+
+});
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+        closeImage();
+
+    }
+
+    if (event.key === "Home") {
+
+        scrollToTop();
+
+    }
+
+});
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    if (loader) {
+
+        setTimeout(() => {
+
+            loader.style.opacity = "0";
+
+            setTimeout(() => {
+
+                loader.style.display = "none";
+
+            },500);
+
+        },700);
+
+    }
+
+});
+
+window.onerror = function(message, file, line) {
 
     console.error("JavaScript Error");
 
@@ -503,9 +401,8 @@ function initializeApp() {
 
     startSlideshow();
 
-    console.log(APP_NAME + " Loaded");
+    console.log(APP_NAME + " Loaded Successfully");
 
 }
 
-document.addEventListener("DOMContentLoaded",initializeApp);
-
+document.addEventListener("DOMContentLoaded", initializeApp);
