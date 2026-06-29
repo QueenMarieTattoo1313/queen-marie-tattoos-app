@@ -1,129 +1,351 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>Contact | Queen Marie Tattoos</title>
+<title>
 
-<meta name="description" content="Contact Queen Marie Tattoos">
+Contact | Queen Marie Tattoos
 
-<link rel="icon" href="../images/logo.png">
+</title>
 
-<link rel="stylesheet" href="../styles.css">
+<meta name="theme-color"
+content="#ff4fa5">
+
+<meta name="description"
+content="Contact Queen Marie Tattoos">
+
+<link rel="icon"
+href="images/logo.png">
+
+<link rel="stylesheet"
+href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
 
 </head>
 
 <body>
 
-<header>
+<div class="background-glow"></div>
 
-<div class="logo-container">
+<div class="sparkles"></div>
 
-<img src="../images/logo.png"
-alt="Queen Marie Tattoos Logo"
-class="logo">
+<div class="app-container">
 
-<h1>Contact</h1>
+<header class="page-header">
 
-<p>Luxury • Precision • Art</p>
+<a
+href="javascript:history.back()"
+class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back
+
+</a>
+
+<div class="page-title">
+
+<img
+src="images/logo.png"
+class="logo"
+alt="Queen Marie Tattoos">
+
+<div>
+
+<h1>
+
+Contact
+
+</h1>
+
+<p>
+
+Queen Marie Tattoos
+
+</p>
+
+</div>
 
 </div>
 
 </header>
 
-<section class="welcome">
+<section class="gallery-hero">
 
-<h2>Get In Touch</h2>
+<h2>
+
+Let's Create Something Beautiful
+
+</h2>
 
 <p>
 
-Have questions about your tattoo, pricing, scheduling, or availability?
+Have questions about pricing, scheduling, tattoo ideas, or availability?
 
-Send a message or contact Queen Marie directly.
+Send a message below and Queen Marie will get back with you.
 
 </p>
 
 </section>
 
-<form onsubmit="return validateContactForm()">
+<!--==================================
+CONTACT FORM
+===================================-->
+
+<section class="glass-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+</div>
+
+<h2>
+
+Send A Message
+
+</h2>
+
+<p>
+
+Complete the form below and Queen Marie will contact you as soon as possible.
+
+</p>
+
+<form
+id="contactForm"
+onsubmit="return validateContactForm()"
+class="contact-form">
+
+<div class="form-group">
+
+<label>
+
+Full Name
+
+</label>
 
 <input
 type="text"
 id="name"
-placeholder="Your Name"
+placeholder="Enter your full name"
 required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Phone Number
+
+</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="(555) 555-5555">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Email Address
+
+</label>
 
 <input
 type="email"
 id="email"
-placeholder="Your Email"
+placeholder="name@email.com"
 required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Subject
+
+</label>
+
+<select
+id="subject"
+required>
+
+<option value="">
+
+Choose One
+
+</option>
+
+<option>
+
+New Tattoo
+
+</option>
+
+<option>
+
+Tattoo Quote
+
+</option>
+
+<option>
+
+Booking Question
+
+</option>
+
+<option>
+
+Reschedule Appointment
+
+</option>
+
+<option>
+
+Aftercare Question
+
+</option>
+
+<option>
+
+Flash Tattoo
+
+</option>
+
+<option>
+
+Other
+
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+
+Your Message
+
+</label>
 
 <textarea
 id="message"
-placeholder="Your Message..."
-rows="6"
-required></textarea>
+rows="7"
+placeholder="Tell Queen Marie how she can help you..."
+required>
 
-<button type="submit">
+</textarea>
 
-📩 Send Message
+</div>
+
+
+<button
+type="submit"
+class="primary-btn contact-submit">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Send Message
 
 </button>
 
 </form>
 
-<section class="contact-home">
+</section>  
 
-<h2>Contact Information</h2>
+<!--==================================
+CONTACT INFORMATION
+===================================-->
+
+<section class="glass-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-address-card"></i>
+
+</div>
+
+<h2>
+
+Contact Information
+
+</h2>
 
 <p>
 
-📞
+Questions about a tattoo, pricing, appointments, or aftercare?
 
-<a href="tel:2147109249">
+Reach out using any of the options below.
+
+</p>
+
+<div class="contact-buttons">
+
+<a
+href="tel:2147109249"
+class="primary-btn">
+
+<i class="fa-solid fa-phone"></i>
 
 214-710-9249
 
 </a>
 
-</p>
+<a
+href="mailto:donnamorales70@gmail.com"
+class="secondary-btn">
 
-<p>
+<i class="fa-solid fa-envelope"></i>
 
-📧
-
-<a href="mailto:donnamorales70@gmail.com">
-
-donnamorales70@gmail.com
+Email Me
 
 </a>
 
-</p>
+</div>
 
-</section>
+<div class="contact-buttons">
 
-<section class="social">
+<a
+href="https://facebook.com/donna.m.ponce"
+target="_blank"
+class="primary-btn">
 
-<h2>Follow Queen Marie</h2>
-
-<div class="social-buttons">
-
-<a href="#"
-class="social-btn"
-target="_blank">
+<i class="fa-brands fa-facebook-f"></i>
 
 Facebook
 
 </a>
 
-<a href="#"
-class="social-btn"
-target="_blank">
+<a
+href="https://www.instagram.com/queenmarietattoos"
+target="_blank"
+class="secondary-btn">
+
+<i class="fa-brands fa-instagram"></i>
 
 Instagram
 
@@ -133,43 +355,353 @@ Instagram
 
 </section>
 
-<section class="main-buttons">
 
-<a href="booking.html"
-class="main-btn">
+<!--==================================
+SERVICE AREA
+===================================-->
 
-📅 Book Appointment
+<section class="glass-card">
 
-</a>
+<div class="card-icon">
 
-<a href="https://web.getporter.io/artist/queen-marie"
-target="_blank"
-class="main-btn">
+<i class="fa-solid fa-location-dot"></i>
 
-💳 Pay Deposit
+</div>
 
-</a>
+<h2>
+
+Serving
+
+</h2>
+
+<p>
+
+Proudly serving clients throughout:
+
+</p>
+
+<ul class="aftercare-list">
+
+<li>Tyler, Texas</li>
+
+<li>East Texas</li>
+
+</ul>
+
+</section>  
+
+ <!--==================================
+WHY CHOOSE QUEEN MARIE
+===================================-->
+
+<section class="glass-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-crown"></i>
+
+</div>
+
+<h2>
+
+Why Choose Queen Marie?
+
+</h2>
+
+<div class="feature-grid">
+
+<div class="feature-box">
+
+<i class="fa-solid fa-pen-ruler"></i>
+
+<h3>
+
+Custom Designs
+
+</h3>
+
+<p>
+
+Every tattoo is designed to fit your vision and personal style.
+
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<i class="fa-solid fa-palette"></i>
+
+<h3>
+
+Quality Artwork
+
+</h3>
+
+<p>
+
+Professional craftsmanship with attention to every detail.
+
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<i class="fa-solid fa-heart"></i>
+
+<h3>
+
+Client Focused
+
+</h3>
+
+<p>
+
+A comfortable experience from consultation through aftercare.
+
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<i class="fa-solid fa-shield-heart"></i>
+
+<h3>
+
+Safe & Clean
+
+</h3>
+
+<p>
+
+Committed to professional sanitation and safety standards.
+
+</p>
+
+</div>
+
+</div>
 
 </section>
 
-<div style="text-align:center;margin:40px;">
 
-<a href="../index.html"
-class="back-button">
 
-← Back Home
+<!--==================================
+READY TO BOOK?
+===================================-->
+
+<section class="glass-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</div>
+
+<h2>
+
+Ready To Get Inked?
+
+</h2>
+
+<p>
+
+Book your appointment today or reserve your session by paying your deposit online.
+
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="booking.html"
+class="primary-btn">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Book Appointment
+
+</a>
+
+<a
+href="https://web.getporter.io/artist/queen-marie"
+target="_blank"
+class="secondary-btn">
+
+<i class="fa-solid fa-credit-card"></i>
+
+Pay Deposit
 
 </a>
 
 </div>
 
-<footer>
+</section>
+
+
+
+<!--==================================
+QUICK CONTACT
+===================================-->
+
+<section class="glass-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-comments"></i>
+
+</div>
+
+<h2>
+
+Need A Quick Answer?
+
+</h2>
 
 <p>
 
-© <span id="year"></span> Queen Marie Tattoos
+Choose your preferred way to reach Queen Marie.
 
 </p>
+
+<div class="contact-buttons">
+
+<a
+href="tel:2147109249"
+class="primary-btn">
+
+<i class="fa-solid fa-phone"></i>
+
+Call
+
+</a>
+
+<a
+href="sms:2147109249"
+class="secondary-btn">
+
+<i class="fa-solid fa-comment-dots"></i>
+
+Text
+
+</a>
+
+<a
+href="mailto:donnamorales70@gmail.com"
+class="primary-btn">
+
+<i class="fa-solid fa-envelope"></i>
+
+Email
+
+</a>
+
+</div>
+
+</section> 
+
+<!--==================================
+FLOATING ACTION BUTTONS
+===================================-->
+
+<div class="floating-buttons">
+
+<a
+href="tel:2147109249"
+class="floating-btn"
+title="Call">
+
+<i class="fa-solid fa-phone"></i>
+
+</a>
+
+<a
+href="booking.html"
+class="floating-btn"
+title="Book Appointment">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</a>
+
+<a
+href="sms:2147109249"
+class="floating-btn"
+title="Text Message">
+
+<i class="fa-solid fa-comment-dots"></i>
+
+</a>
+
+</div>
+
+
+<!--==================================
+BOTTOM NAVIGATION
+===================================-->
+
+<nav class="bottom-nav">
+
+<a href="index.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</a>
+
+<a href="gallery.html">
+
+<i class="fa-solid fa-images"></i>
+
+<span>Gallery</span>
+
+</a>
+
+<a href="booking.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<span>Book</span>
+
+</a>
+
+<a href="reviews.html">
+
+<i class="fa-solid fa-star"></i>
+
+<span>Reviews</span>
+
+</a>
+
+<a href="contact.html" class="active">
+
+<i class="fa-solid fa-address-book"></i>
+
+<span>Contact</span>
+
+</a>
+
+</nav>
+
+
+<!--==================================
+FOOTER
+===================================-->
+
+<footer class="footer">
+
+<img
+src="images/logo.png"
+class="footer-logo"
+alt="Queen Marie Tattoos">
+
+<h3>
+
+Queen Marie Tattoos
+
+</h3>
 
 <p>
 
@@ -177,10 +709,53 @@ Luxury Custom Tattoos
 
 </p>
 
+<p>
+
+Tyler • East Texas
+
+</p>
+
+<p>
+
+© <span id="year"></span>
+
+Queen Marie Tattoos
+
+</p>
+
 </footer>
 
-<script src="../script.js"></script>
+
+<!--==================================
+NOTIFICATION
+===================================-->
+
+<div
+id="notification"
+class="notification">
+
+</div>
+
+
+<!--==================================
+LOADER
+===================================-->
+
+<div id="loader">
+
+<div class="loader-spinner"></div>
+
+</div>
+
+
+<!--==================================
+JAVASCRIPT
+===================================-->
+
+<script src="script.js"></script>
+
+</div>
 
 </body>
 
-</html>
+</html>  
